@@ -1,0 +1,19 @@
+class Solution(object):
+    def minimumMoves(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+
+        count = 0
+        sweep = 0
+        while sweep < len(s):
+            if s[sweep] == 'X':
+                count += 1
+                sweep += 3
+
+            else:
+                sweep += 1
+
+        
+        return count
