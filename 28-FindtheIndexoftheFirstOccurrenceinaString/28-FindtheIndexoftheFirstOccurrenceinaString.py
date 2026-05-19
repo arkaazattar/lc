@@ -1,19 +1,14 @@
-# Last updated: 5/19/2026, 5:25:16 PM
+# Last updated: 5/19/2026, 6:38:44 PM
 1class Solution:
-2    def strStr(self, haystack: str, needle: str) -> int:
-3        
-4        if needle == "":
-5            return 0
-6        
-7        for i in range(len(haystack) - len(needle) + 1):
-8            j = 0
-9
-10            while haystack[j + i] == needle[j]:
-11                j += 1
-12                
-13                if j == len(needle):
-14                    return i
-15        
-16        return -1
-17
-18
+2    def removeElement(self, nums: List[int], val: int) -> int:
+3        i = 0
+4        j = len(nums)
+5
+6        while i < j:
+7            if nums[i] == val:
+8                nums[i] = nums[j - 1]
+9                j -= 1
+10            else:
+11                i += 1
+12        return j
+13                
