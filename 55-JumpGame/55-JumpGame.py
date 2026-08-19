@@ -1,15 +1,11 @@
-# Last updated: 5/23/2026, 2:33:46 PM
-class Solution:
-    def canJump(self, nums: List[int]) -> bool:
-        if len(nums) == 1:
-            return True
-        
-        safe = len(nums) - 1
-        # start at last element
-        for i in range(len(nums) - 1, -1, -1 ):
-            if nums[i] >= safe - i:
-                safe = i
-        
-        if safe == 0:
-            return True
-        return False
+# Last updated: 8/19/2026, 3:25:18 PM
+1class Solution:
+2    def canJump(self, nums: List[int]) -> bool:
+3        goal = len(nums) - 1
+4
+5        for i in range(len(nums) -2, -1, -1):
+6            if nums[i] >= (goal - i):
+7                goal = i
+8        
+9        return goal == 0
+10
