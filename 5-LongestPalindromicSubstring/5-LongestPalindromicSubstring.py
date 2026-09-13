@@ -1,19 +1,16 @@
-# Last updated: 9/13/2026, 4:48:07 PM
+# Last updated: 9/13/2026, 5:14:03 PM
 1class Solution:
-2    def countSubstrings(self, s: str) -> int:
-3        palindromes = 0
-4    
-5        for i in range(len(s)):
-6            l, r = i, i
-7            while l >= 0 and r < len(s) and s[l] == s[r]:
-8                palindromes += 1
-9                l -= 1
-10                r += 1
-11
-12            l, r = i, i + 1
-13            while l >= 0 and r < len(s) and s[l] == s[r]:
-14                palindromes += 1
-15                l -= 1
-16                r += 1
-17
-18        return palindromes
+2    def maxArea(self, height: List[int]) -> int:
+3        max_area = 0
+4        
+5        l, r = 0, len(height) - 1
+6        while l < r:
+7            if height[l] < height[r]:
+8                max_area = max(max_area, min(height[l], height[r]) * (r - l))
+9                l += 1
+10            
+11            else:
+12                max_area = max(max_area, min(height[l], height[r]) * (r - l))
+13                r -= 1
+14
+15        return max_area
