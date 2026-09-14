@@ -1,4 +1,4 @@
-# Last updated: 9/14/2026, 7:53:51 PM
+# Last updated: 9/14/2026, 7:53:57 PM
 1class Solution:
 2    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
 3        words = set(wordDict)
