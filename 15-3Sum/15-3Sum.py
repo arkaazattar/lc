@@ -1,4 +1,4 @@
-# Last updated: 9/15/2026, 11:09:03 AM
+# Last updated: 9/15/2026, 11:20:00 AM
 1class Solution:
 2    def threeSum(self, nums: list[int]) -> list[list[int]]:
 3        nums.sort()
@@ -14,12 +14,12 @@
 13            l, r = i + 1, len(nums) - 1
 14
 15            while l < r:
-16                sum = val + nums[l] + nums[r]
+16                total = val + nums[l] + nums[r]
 17                
-18                if sum > 0:
+18                if total > 0:
 19                    r -= 1
 20                
-21                elif sum < 0:
+21                elif total < 0:
 22                    l += 1
 23                
 24                else:
