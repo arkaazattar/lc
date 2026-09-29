@@ -1,4 +1,4 @@
-# Last updated: 9/29/2026, 11:24:57 AM
+# Last updated: 9/29/2026, 11:25:42 AM
 1class Solution:
 2    def rob(self, nums: List[int]) -> int:
 3        """
@@ -24,4 +24,4 @@
 23        for i in range(len(nums)):
 24            dp[i] = max(nums[i] + dp[i - 2], dp[i - 1])
 25
-26        return max(dp[-1], dp[-2])
+26        return dp[-1]
