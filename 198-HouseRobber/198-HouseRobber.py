@@ -1,14 +1,27 @@
-# Last updated: 9/7/2026, 4:23:00 PM
+# Last updated: 9/29/2026, 11:24:57 AM
 1class Solution:
 2    def rob(self, nums: List[int]) -> int:
-3        if len(nums) == 1:
-4            return nums[0]
-5
-6        prev1, prev2 = max(nums[0], nums[1]), nums[0] 
-7
-8        for i in range(2, len(nums)):
-9            cur = max(prev1, prev2 + nums[i])
-10            prev2 = prev1
-11            prev1 = cur
-12
-13        return prev1
+3        """
+4        at each house two options => rob, or don't rob
+5        if you rob the house, you cannot rob the house after it
+6
+7        nums = [5, 1, 1, 5]
+8        
+9        dp = [5, 1, 0, 0]
+10        dp = [5, 1, 6, 10]
+11
+12        dp[i] = max(nums[i] + dp[i - 2], dp[i - 1])
+13
+14        return 10
+15
+16        """
+17        
+18        if len(nums) == 1:
+19            return nums[0]
+20
+21        dp = [0] * len(nums)
+22
+23        for i in range(len(nums)):
+24            dp[i] = max(nums[i] + dp[i - 2], dp[i - 1])
+25
+26        return max(dp[-1], dp[-2])
