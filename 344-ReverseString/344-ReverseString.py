@@ -1,4 +1,4 @@
-# Last updated: 9/30/2026, 5:56:58 PM
+# Last updated: 9/30/2026, 7:34:02 PM
 1class Solution:
 2    def reverseString(self, s: list[str]) -> None:
 3        """
@@ -13,5 +13,3 @@
 12
 13            i += 1
 14            j -= 1
-15        
-16        return s
