@@ -1,9 +1,10 @@
-# Last updated: 11/2/2026, 8:10:13 PM
+# Last updated: 11/3/2026, 12:42:32 AM
 1class Solution:
 2    def hammingWeight(self, n: int) -> int:
 3        ct = 0
-4        for ch in str(bin(n)):
-5            if ch == "1":
-6                ct += 1
-7
-8        return ct
+4
+5        while n:
+6            ct += n & 1
+7            n >>= 1
+8
+9        return ct
