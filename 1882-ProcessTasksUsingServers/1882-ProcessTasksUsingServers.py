@@ -1,8 +1,6 @@
 import heapq
 class Solution:
     def assignTasks(self, servers: list[int], tasks: list[int]) -> list[int]:
-        """
-        """
         busy = []
         available = [(weight, i) for i, weight in enumerate(servers)]
         heapq.heapify(available)
