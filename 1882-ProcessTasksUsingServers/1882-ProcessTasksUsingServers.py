@@ -1,4 +1,3 @@
-# Last updated: 11/7/2026, 10:33:46 AM
 import heapq
 class Solution:
     def assignTasks(self, servers: list[int], tasks: list[int]) -> list[int]:
@@ -27,6 +26,3 @@ class Solution:
                 rsp.append(cur_server[1])
         
         return rsp
-
-    
-
