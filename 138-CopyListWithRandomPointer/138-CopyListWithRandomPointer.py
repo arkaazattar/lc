@@ -25,5 +25,4 @@ class Solution:
                 new.random = old_to_new[old.random]
             else:
                 new.random = None
-        for old, new in old_to_new.items():
-            return new
+        return old_to_new[head] if head else None
