@@ -3,22 +3,13 @@ class Solution:
         if len(nums) == 1:
             return True
         
-        increasing = True if nums[0] <= nums[-1] else False
-        
-        i, j = 0, 1
+        increasing = False if nums[0] > nums[-1] else True
 
-        if increasing:
-            while j < len(nums):
-                if nums[i] > nums[j]:
-                    return False
-                i += 1
-                j += 1
-            return True
-
-        else:
-            while j < len(nums):
-                if nums[i] < nums[j]:
-                    return False
-                i += 1
-                j += 1
-            return True
+        for i in range(1, len(nums)):
+            if increasing and nums[i] >= nums[i - 1]:
+                pass
+            elif not increasing and nums[i] <= nums[i - 1]:
+                pass
+            else:
+                return False
+        return True
