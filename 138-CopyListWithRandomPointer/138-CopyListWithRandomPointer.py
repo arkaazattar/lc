@@ -9,18 +9,16 @@ class Node:
 
 class Solution:
     def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
-        cur = head
         old_to_new = {}
+
+        cur = head
         while cur:
-            old_to_new[cur] = Node(cur.val)
+            newNode = ListNode(val=cur.val)
+            old_to_new[cur] = newNode
             cur = cur.next
-        # now have a dict where old nodes have corresponding new nodes that are not linked
-        for old, new in old_to_new.items():
-            # give its next
-            if old.next:
-                new.next = old_to_new[old.next]
-            # give its random
-            if old.random:
-                new.random = old_to_new[old.random]
+
+        for old, cur in old_to_new.items():
+            cur.next = old_to_new[old.next] if old.next else None
+            cur.random = old_to_new[old.random] if old.random else None
 
         return old_to_new[head] if head else None
